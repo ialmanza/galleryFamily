@@ -266,4 +266,28 @@ export class GalleryComponent {
       });
     });
   }
+
+  // Método para dividir los videos en dos grupos
+  getVideoGroups(items: GalleryItem[]): { group1: GalleryItem[], group2: GalleryItem[] } {
+    const videoItems = items.filter(item => item.type === 'video');
+    const midpoint = Math.ceil(videoItems.length / 2);
+
+    return {
+      group1: videoItems.slice(0, midpoint),
+      group2: videoItems.slice(midpoint)
+    };
+  }
+
+  // Métodos para el carrusel
+  scrollCarousel(element: HTMLElement, direction: 'left' | 'right'): void {
+    const scrollAmount = 300;
+    const scrollPosition = direction === 'left'
+      ? element.scrollLeft - scrollAmount
+      : element.scrollLeft + scrollAmount;
+
+    element.scrollTo({
+      left: scrollPosition,
+      behavior: 'smooth'
+    });
+  }
 }

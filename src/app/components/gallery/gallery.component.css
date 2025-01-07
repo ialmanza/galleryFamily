@@ -360,3 +360,140 @@
     height: 100px;
   }
 }
+
+
+/* Añadir estos estilos al archivo CSS existente */
+
+.video-carousel-container {
+  margin-bottom: 2rem;
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-button {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+  background: #ff5252;
+}
+
+.video-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.video-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.video-carousel .gallery-item {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .video-carousel .gallery-item {
+    flex: 0 0 250px;
+  }
+
+  .gallery-grid {
+    display: block;
+  }
+
+
+  .gallery-section:not(.videos-section) .gallery-grid {
+    display: grid;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .video-carousel .gallery-item {
+    flex: 0 0 200px;
+  }
+}
+
+
+/* Video Carousel Styles */
+.video-carousel-container {
+  display: none; /* Hidden by default for desktop */
+}
+
+.gallery-section[class*="videos-section"] .gallery-grid {
+  display: grid; /* Show grid by default for desktop */
+}
+
+/* Tablet and Mobile Styles (max-width: 1024px) */
+@media (max-width: 1024px) {
+  /* Show carousel on mobile/tablet */
+  .video-carousel-container {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  /* Hide regular video grid on mobile/tablet */
+  .gallery-section[class*="videos-section"] .gallery-grid {
+    display: none;
+  }
+
+  /* Carousel specific styles */
+  .video-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .video-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .video-carousel .gallery-item {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    margin-right: 1rem;
+  }
+}
+
+/* Additional mobile adjustments */
+@media (max-width: 768px) {
+  .video-carousel .gallery-item {
+    flex: 0 0 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-carousel .gallery-item {
+    flex: 0 0 200px;
+  }
+}
