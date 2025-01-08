@@ -25,7 +25,7 @@ export class GalleryComponent {
   gallerySections: GallerySection[] = [
     {
       title: 'Momentos divertidos',
-      description: 'Los momentos más divertidos con nuestros pequeños',
+      description: 'Los momentos más divertidos con los peques',
       items: [
         {
           type: 'video',
@@ -56,7 +56,7 @@ export class GalleryComponent {
     },
     {
       title: 'Comidas Favoritas',
-      description: 'Nuestros platillos más queridos y momentos especiales en la cocina',
+      description: 'Platillos más queridos',
       items: [
         {
           type: 'image',
